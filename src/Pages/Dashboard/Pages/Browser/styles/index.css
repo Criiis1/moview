@@ -1,0 +1,252 @@
+body {
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+* {
+  list-style: none;
+}
+
+.home-page-dashboard > img {
+  width: 100%;
+  height: auto;
+  object-fit: fill;
+}
+
+.home-page-dashboard {
+  position: absolute;
+}
+
+.name {
+  position: absolute;
+  color: #ffff;
+  margin-top: 170px;
+  margin-left: 28px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.more_movies {
+  background-color: black;
+  width: 100%;
+  height: 100vh;
+  margin-top: 0px;
+  z-index: 478;
+  position: absolute;
+}
+
+.movies {
+  width: 100%;
+  height: auto;
+  margin-top: 45px;
+}
+
+.btn {
+  border: none !important;
+  outline: 0 !important;
+}
+
+/**/
+.title_first_row {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 27px;
+  font-weight: bold;
+  color: #ffff;
+  margin-left: 10px;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.row01_series_popular {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  margin-top: -25px;
+
+  scroll-behavior: smooth;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  background-color: black;
+}
+
+.row01_tv_popular {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  margin-top: -25px;
+
+  scroll-behavior: smooth;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  background-color: black;
+}
+
+.row01_tv_popular::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.row01_tv_popular::-webkit-scrollbar-track {
+  background: #333;
+}
+
+.row01_tv_popular::-webkit-scrollbar-thumb {
+  background: #ff1e00;
+}
+
+.tv01 > ul > li > a > img {
+  width: 250px;
+  height: auto;
+  margin-left: 10px;
+  padding: 5px;
+  transition: 0.2s;
+}
+
+.tv01 > ul > li > a > img:hover {
+  transform: scale(1.1);
+}
+
+/**/
+
+.row_02_popular {
+  background-color: black;
+}
+
+.title_second_row {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 27px;
+  font-weight: bold;
+  color: #ffff;
+  margin-left: 10px;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: black;
+}
+
+.row02_movies_popular {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  margin-top: -25px;
+
+  scroll-behavior: smooth;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  direction: ltr;
+  background-color: black;
+}
+
+.row02_movies_popular::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.row02_movies_popular::-webkit-scrollbar-track {
+  background: #333;
+}
+
+.row02_movies_popular::-webkit-scrollbar-thumb {
+  background: #ff1e00;
+}
+
+.movies02 > ul > li > a > img {
+  width: 250px;
+  height: auto;
+  margin-left: 10px;
+  padding: 5px;
+  transition: 0.2s;
+}
+
+.movies02 > ul > li > a > img:hover {
+  transform: scale(1.1);
+}
+
+.hidden {
+  display: none;
+}
+
+.container_right {
+  margin-left: 10px;
+}
+
+.account_contant {
+  margin-left: -210px;
+  margin-top: 3px;
+}
+
+.buttons_tv_scroll {
+  width: 100%;
+  height: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: absolute;
+  margin-top: 145px;
+}
+
+.buttons_tv_scroll > button {
+  background-color: black;
+  color: #fff;
+  z-index: 999;
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 32px;
+  opacity: 45%;
+  transition: 0.2s;
+}
+
+.buttons_tv_scroll > button:hover {
+  opacity: 80%;
+}
+
+.buttons_movies_scroll {
+  width: 100%;
+  height:0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: absolute;
+  margin-top: 145px;
+}
+
+.buttons_movies_scroll > button {
+  background-color: black;
+  color: #fff;
+  z-index: 999;
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 32px;
+  opacity: 45%;
+  transition: 0.2s;
+}
+
+.buttons_movies_scroll > button:hover {
+  opacity: 80%;
+}
+
+.loading{
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.hide{
+  display: none;
+}
+.scroll-hidden{
+  overflow-y: hidden;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Programas Infantiles</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css"> <!-- Usa tu CSS -->
+    <style>
+        ul.media-list {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.media-list li {
+            margin: 10px;
+        }
+
+        ul.media-list img {
+            width: 200px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        ul.media-list img:hover {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            margin-top: 40px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎈 Programas Infantiles</h1>
+
+    <h2>Series Infantiles</h2>
+    <ul id="row_kids_tv" class="media-list"></ul>
+
+    <h2>Películas Infantiles</h2>
+    <ul id="row_kids_movies" class="media-list"></ul>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            const apiKey = '?api_key=70871dda752f8e0acafbfa0d04de7939';
+            const baseURL = 'https://api.themoviedb.org/3/';
+            const language = '&language=en-US';
+            const sort = '&sort_by=popularity.desc';
+            const countries = '&with_origin_country=US';  // Solo USA
+
+            // SERIES infantiles (género 10762)
+            const genreKidsSeries = '&with_genres=10762';
+
+            // PELÍCULAS infantiles (género 10751)
+            const genreKidsMovies = '&with_genres=10751';
+
+            // Función para mostrar resultados en el DOM
+            function renderItems(containerId, items, type) {
+                const container = document.getElementById(containerId);
+                container.innerHTML = '';
+
+                items.forEach((item, index) => {
+                    const posterimg = 'https://image.tmdb.org/t/p/w300' + item.poster_path;
+                    const title = type === 'tv' ? item.name : item.title;
+
+                    container.innerHTML += `
+                        <li>
+                            <a href="../MediaDetails/index.html?id=${item.id}&type=${type}&page=details">
+                                <img src="${posterimg}" alt="${title}" id="${containerId}${index}">
+                            </a>
+                        </li>
+                    `;
+                });
+            }
+
+            // Fetch Series Infantiles
+            fetch(baseURL + 'discover/tv' + apiKey + genreKidsSeries + countries + language + sort)
+                .then(response => {
+                    if (!response.ok) throw new Error("Error en la API de Series: " + response.status);
+                    return response.json();
+                })
+                .then(data => {
+                    renderItems('row_kids_tv', data.results, 'tv');
+                })
+                .catch(error => {
+                    console.error("Fallo al cargar series infantiles:", error);
+                });
+
+            // Fetch Películas Infantiles
+            fetch(baseURL + 'discover/movie' + apiKey + genreKidsMovies + countries + language + sort)
+                .then(response => {
+                    if (!response.ok) throw new Error("Error en la API de Películas: " + response.status);
+                    return response.json();
+                })
+                .then(data => {
+                    renderItems('row_kids_movies', data.results, 'movie');
+                })
+                .catch(error => {
+                    console.error("Fallo al cargar películas infantiles:", error);
+                });
+        });
+    </script>
+</body>
+</html>
