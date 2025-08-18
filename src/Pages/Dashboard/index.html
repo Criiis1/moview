@@ -18,6 +18,14 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles/index.css" />
 
+  <script>
+      $(window).on("load", function() {
+    $(".loading").fadeOut(500, function() {
+        $(this).remove();
+        $("body").removeClass("scroll-hidden");
+    });
+});
+    </script>
 </head>
 <body>
 
